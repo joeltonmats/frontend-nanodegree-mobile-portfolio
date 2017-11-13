@@ -2,13 +2,14 @@
 
 var ngrok = require('ngrok');
 
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
   // Load grunt tasks
   require('load-grunt-tasks')(grunt);
 
   // Grunt configuration
   grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
     pagespeed: {
       options: {
         nokey: true,
@@ -25,15 +26,27 @@ module.exports = function(grunt) {
           strategy: "mobile"
         }
       }
-    }
+    },
+
+    // minify css files -----------------------------------
+    cssmin: {
+      options: {
+        banner: '/*\n <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> \n*/\n'
+      },
+      production: {
+        files: [{
+          expand: true, cwd: './css', src: ['*.css', '!*.min.css'], dest: './css', ext: '.min.css'
+        }]
+      }
+    },
   });
 
   // Register customer task for ngrok
-  grunt.registerTask('psi-ngrok', 'Run pagespeed with ngrok', function() {
+  grunt.registerTask('psi-ngrok', 'Run pagespeed with ngrok', function () {
     var done = this.async();
     var port = 8081;
 
-    ngrok.connect(port, function(err, url) {
+    ngrok.connect(port, function (err, url) {
       if (err !== null) {
         grunt.fail.fatal(err);
         return done();
