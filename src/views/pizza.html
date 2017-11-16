@@ -2,8 +2,16 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="css/style.min.css">
-  <link rel="stylesheet" href="css/bootstrap-grid.css">
+
+  <!--dev build-->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/bootstrap-grid.css" rel="stylesheet">
+  <!--end dev build-->
+
+  <!--production build
+     <link href="css/style.min.css" rel="stylesheet">
+    <link href="css/bootstrap-grid.min.css" rel="stylesheet">
+    end production build-->
 </head>
 
 <body>
@@ -147,7 +155,14 @@
     </div>
     <div id="footer" class="col-md-12">Thanks for visiting! &copy; 2014 Udacity</div>
   </div>
-  <script type="text/javascript" src="js/main.js"></script>
+
+  <!--dev build-->
+  <script t type="text/javascript" src="js/main.js"></script>
+  <!--end dev build-->
+
+  <!--production build
+  <script t type="text/javascript" src="js/main.min.js"></script>
+  end production build-->
 </body>
 
 </html>

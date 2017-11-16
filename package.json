@@ -4,6 +4,7 @@
   "description": "optmization cameros portfolio on page speed",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,9 +22,19 @@
   "homepage": "https://github.com/joeltonmats/frontend-nanodegree-mobile-portfolio#readme",
   "devDependencies": {
     "grunt": "^1.0.1",
-    "grunt-pagespeed": "^2.0.1",
+    "grunt-contrib-clean": "latest",
+    "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-cssmin": "latest",
+    "grunt-contrib-htmlmin": "^2.4.0",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-pagespeed": "^2.0.1",
+    "grunt-replace": "^1.0.1",
     "load-grunt-tasks": "^3.5.2",
     "ngrok": "^2.2.23"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
   }
 }
