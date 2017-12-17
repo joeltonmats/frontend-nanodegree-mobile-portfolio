@@ -10,14 +10,15 @@ The target was optimize this online portfolio for speed, in particular, optimize
 2. Download the dependecies
 
  ```bash
- npm install
+ $> cd /path/to/your-project-folder
+ $> npm install
  ```
 
 3.  To inspect the site on your phone, you can run a local server
  
   ```bash
   $> cd /path/to/your-project-folder
-  $> nmp start
+  $> npm start
   ```
 
 4. Open a browser and visit localhost:3000
