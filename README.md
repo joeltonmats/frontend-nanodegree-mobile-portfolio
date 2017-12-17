@@ -22,7 +22,7 @@ The target was optimize this online portfolio for speed, in particular, optimize
 
 4. Open a browser and visit localhost:3000
 
-[If you dont want to do next two steps, go to next section and run PageSpeed score locally].
+**If you dont want to do next two steps, go to next section and run PageSpeed score locally.**
 
 5. Download and install [ngrok](https://ngrok.com/) to the top-level of your project directory to make your local server accessible remotely 
 
