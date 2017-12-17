@@ -2,10 +2,11 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const bodyParser = require('body-parser');
+const compression = require('compression')
 
-// Parsers for POST data
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(compression())
 
 app.use(express.static(path.join(__dirname, 'dist')));
 

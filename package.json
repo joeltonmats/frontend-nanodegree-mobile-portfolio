@@ -4,8 +4,9 @@
   "description": "optmization cameros portfolio on page speed",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "grunt production"
   },
   "repository": {
     "type": "git",

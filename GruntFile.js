@@ -128,6 +128,6 @@ module.exports = function (grunt) {
   });
 
   // Register default tasks
-  grunt.registerTask('default', ['psi-ngrok']);
+  grunt.registerTask('pagespeed-score', ['psi-ngrok']);
   grunt.registerTask('production', ['copy:production', 'cssmin:production', 'uglify:production', 'clean:production', 'replace:production', 'htmlmin:production']);
 };
