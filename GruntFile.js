@@ -104,7 +104,7 @@ module.exports = function (grunt) {
 
     watch: {
       files: ['src/**/*.html', 'src/**/*.js', 'src/**/*.css'],
-      tasks: ['copy:production', 'cssmin:production', 'uglify:production', 'clean:production', 'replace:production', 'inlinecss:main']
+      tasks: ['copy:production', 'cssmin:production', 'uglify:production', 'clean:production', 'replace:production']
     },
 
     pagespeed: {
