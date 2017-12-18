@@ -87,9 +87,24 @@ module.exports = function (grunt) {
       }
     },
 
+    // inline css -----------------------------------
+    critical: {
+      extract: {
+        options: {
+          base: './',
+          width: 1024,
+          height: 768,
+          minify: true
+        },
+        src: 'dist/index.html',
+        dest: 'dist/index.html'
+      }
+    },
+
+
     watch: {
       files: ['src/**/*.html', 'src/**/*.js', 'src/**/*.css'],
-      tasks: ['copy:production', 'cssmin:production', 'uglify:production', 'clean:production', 'replace:production', 'htmlmin:production']
+      tasks: ['copy:production', 'cssmin:production', 'uglify:production', 'clean:production', 'replace:production', 'inlinecss:main']
     },
 
     pagespeed: {
@@ -129,5 +144,5 @@ module.exports = function (grunt) {
 
   // Register default tasks
   grunt.registerTask('pagespeed-score', ['psi-ngrok']);
-  grunt.registerTask('production', ['copy:production', 'cssmin:production', 'uglify:production', 'clean:production', 'replace:production', 'htmlmin:production']);
+  grunt.registerTask('production', ['copy:production', 'cssmin:production', 'uglify:production', 'clean:production', 'replace:production', 'htmlmin:production', 'critical:extract']);
 };

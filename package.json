@@ -29,6 +29,8 @@
     "grunt-contrib-htmlmin": "^2.4.0",
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-watch": "latest",
+    "grunt-critical": "^1.1.0",
+    "grunt-inline-css": "^1.0.0",
     "grunt-pagespeed": "^2.0.1",
     "grunt-replace": "^1.0.1",
     "load-grunt-tasks": "^3.5.2",

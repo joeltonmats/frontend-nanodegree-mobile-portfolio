@@ -201,7 +201,7 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 // initialize for the latest scroll position and mark
 var latestScrollY = 0;
 var mark = false;
-var mPizzas = document.querySelector("#movingPizzas1");
+var mPizzas = document.getElementById("movingPizzas1");
 
 // calls requestAnimationFrame
 function requestMark() {
@@ -224,10 +224,15 @@ function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
 
+  var phase = [];
   var scrollY = latestScrollY / 1250;
-  for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin(scrollY + (i % 5));
-    window.items[i].style.transform = 'translateX(' + (100 * phase) + 'px)';
+
+  for (var i = 0; i < 5; i++) {
+    phase.push(Math.sin(scrollY + i) * 100);
+  }
+
+  for (var i = 0; i < window.items.length; i++) {
+    window.items[i].style.transform = 'translateX(' + phase[i % 5] + 'px)';
   }
 
   window.mark = false;
@@ -243,12 +248,16 @@ function updatePositions() {
 }
 
 // Generates the sliding pizzas when the page loads.
-document.addEventListener('DOMContentLoaded', window.requestAnimationFrame(function () {
+document.addEventListener('DOMContentLoaded', function () {
   var cols = 8;
   var s = 256;
+  var rows = screen.height / s;
 
-  for (var i = 0; i < 100; i++) {
-    var elem = document.createElement('img');
+  var totalPizzaBackground = Math.round(rows * cols);
+  var elem;
+
+  for (var i = 1; i <= totalPizzaBackground; i++) {
+    elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
     elem.style.height = "100px";
@@ -260,4 +269,4 @@ document.addEventListener('DOMContentLoaded', window.requestAnimationFrame(funct
 
   window.items = document.getElementsByClassName('mover');
   window.requestAnimationFrame(updatePositions);
-}));
+});

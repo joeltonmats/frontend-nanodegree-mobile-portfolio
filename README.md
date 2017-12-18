@@ -43,6 +43,16 @@ The target was optimize this online portfolio for speed, in particular, optimize
   $> cd /path/to/your-project-folder
   $> grunt pagespeed-score
   ```
+### Optimizations Made
+
+1. Gzip compactation - It was actived in server side. In app.js has this code.
+2. CSS minification - The css files in the project were minified.
+3. HTML minification - The HTML files were minified.
+4. JS minification - Scripts used in the application were minified.
+5. Images optimization - The images were optimized to reduce load time.
+6. Application Bugs Fixed
+  1. Application runnning in 60 fps.
+  2. Slider on pizza size has a resize smaller 5 ms
 
 
 ### Optimization Tips and Tricks reference this project
